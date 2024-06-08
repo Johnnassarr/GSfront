@@ -1,0 +1,393 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppin', sans-serif;
+}
+
+body {
+    background-image: url('fotos/giffundo_do_mar.fig.gif');
+    background-position: center; 
+    background-size: contain;
+}
+
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 20px 100px;
+    background: transparent;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 99;
+}
+
+.logo {
+    font-size: 32px;
+    color: aliceblue;
+    text-decoration: none;
+    font-weight: 700;
+    pointer-events: none;
+    font-family: Blackadder ITC, Book Antiqua, Papyrus, fantasy;
+}
+
+.navbar a {
+    font-size: 19px;
+    color: aliceblue;
+    text-decoration: none;
+    font-weight: 500;
+    margin-right: 50px;
+}
+
+.navbar .btnlogin-popup {
+    position: relative;
+    background: transparent;
+    border: none;
+    outline: none;
+    font-size: 19px;
+    color: aliceblue;
+    font-weight: 500;
+    cursor: pointer;
+}
+
+.navbar .btnlogin-popup::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -4px;
+    width: 100%;
+    height: 2px;
+    background-color: aliceblue;
+}
+
+.wrapper {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 450px;
+    height: 100%;
+    background: transparent;
+    backdrop-filter: blur(15px);
+    border-left: 2px solid rgba(255, 255, 255, .1);
+    z-index: 100;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    padding: 0 40px;
+    opacity: 0;
+    pointer-events: none;
+}
+.wrapper.active-popup {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.icon-close {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 45px;
+    height: 45px;
+    background: #fff;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-bottom-right-radius: 10px;
+}
+
+.icon-close i {
+    font-size: 32px;
+    color: #333;
+}
+
+.wrapper .logreg-box {
+    width: 100%;
+}
+
+.wrapper .form-box.login {
+    display: block;
+}
+
+.wrapper.active .form-box.login {
+    display: none;
+}
+
+.wrapper.active .form-box.register {
+    display: block;
+}
+
+.wrapper .form-box.register {
+    display: none;
+}
+
+.logreg-box .logreg-title {
+    text-align: center;
+    margin-bottom: 40px;
+    color: white;
+}
+
+.logreg-title h2 {
+    font-size: 32px;
+}
+
+.logreg-title p {
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.logreg-box .input-box {
+    position: relative;
+    width: 100%;
+    height: 50px;
+    margin: 30px 0;
+    border-bottom: 2px solid white;
+}
+
+.input-box input {
+    width: 100%;
+    height: 100%;
+    background: transparent;
+    border: none;
+    outline: none;
+    font-size: 16px;
+    color: aliceblue;
+    font-weight: 500;
+    padding-right: 25px;
+}
+
+.input-box label {
+    position: absolute;
+    top: 50%;
+    left: 0; 
+    transform: translateY(-50%);
+    font-size: 16px;
+    color: aliceblue;
+    font-weight: 500;
+    pointer-events: none;
+    transition: .5s;
+}
+
+.input-box input:focus~label,
+.input-box input:valid~label {
+    top: -5px;
+}
+
+.input-box .icon {
+    position: absolute;
+    top: 50%;
+    right: 0;
+    transform: translateY(-50%);
+    font-size: 19px;
+    color: aliceblue;
+}
+
+.logreg-box .remember-forgot {
+    font-size: 14.5px;
+    color: aliceblue;
+    font-weight: 500;
+    margin: -15px 0 15px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.remember-forgot label input {
+    accent-color: #fff;
+    margin-right: 3px;
+}
+
+.remember-forgot a {
+    color: #fff;
+    text-decoration: none;
+}
+
+.remember-forgot a:hover {
+    text-decoration: underline;
+}
+
+.logreg-box .btn {
+    width: 100%;
+    height: 45px;
+    background: #fff;
+    border: none;
+    outline: none;
+    border-radius: 40px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+    font-size: 16px;
+    color: #222;
+    font-weight: 600;
+}
+
+.logreg-box .logreg-link {
+    font-size: 14.5px;
+    color: #fff;
+    text-align: center;
+    font-weight: 500;
+    margin-top: 25px;
+}
+
+.logreg-link p a {
+    color: #570e5f;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.logreg-link p a:hover {
+    text-decoration: underline;
+}
+
+.lixo {
+    display: flex;
+    align-items: flex-start; 
+    margin-top: 800px;
+    width: 100%;
+    background-color: rgba(255, 255, 255, 0.7);
+    color: black; 
+    padding: 20px;
+    border-radius: 10px; 
+}
+
+.lixo img {
+    margin-left: 20px; 
+}
+
+.font-lixo {
+    color: #000000;
+    font-size: 20px;
+    text-align: center;
+    font-weight: 500;
+    margin-top: 55px;
+}
+
+.titulo-lixo {
+    color: #000000;
+    font-size: 25px;
+    margin-left: 950px;
+    margin-top: -325px;
+}
+
+.futuro{
+    display: flex;
+    align-items: flex-start; 
+    margin-top: 800px;
+    width: 100%;
+    background-color: rgba(255, 255, 255, 0.7);
+    color: black; 
+    padding: 60px;
+    border-radius: 20px;
+    
+}
+
+.font-oceano {
+    color: #000000;
+    font-size: 20px;
+    text-align: center;
+    font-weight: 500;
+    margin-top: 55px;
+}
+
+
+.futuro-oceanos {
+    color: #000000;
+    font-size: 25px;
+    margin-left: 950px;
+    margin-top: -325px;
+
+}
+
+.futuro img {
+    margin-left: 350px;
+
+}
+
+.texto {
+    flex: 1;
+    flex-direction: column; 
+    padding: 0 50px;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+#animacao-text {
+    opacity: 0;
+    font-size: 36px;
+    animation: fadeIn 3s ease-in-out forwards;
+    margin-top: -5100px;
+    color: #fff;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+@media (max-width: 768px) {
+    #projetos {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .projeto {
+        width: 80%;
+        margin-bottom: 20px;
+    }
+}
+
+
+
+
+@media (min-width:991.99px) and (max-width:1199.99px){
+    body{
+        background-color: #ff0000;
+        flex-direction: column;
+    }
+
+}
+
+
+
+@media (min-width:599.99px) and (max-width:991.98px){
+    body{
+        background-color: #ff6200;
+        flex-direction: column;
+        font-size: 3px  ;
+    }
+
+}
+
+
+@media (min-width:479.99px) and (max-width:599.98px){
+    body{
+        background-color: #ffff00;
+        flex-direction: column;
+    }
+
+}
+
+
+
+
+@media (min-width:1200px){
+
+    body{
+        background-color: #2e8300;
+        flex-direction: column;
+    }
+    header{
+        height: 150px;
+    }
+
+}
